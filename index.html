@@ -34,28 +34,24 @@ const main = async () => {
     window.spreadsheetsql_QueryResponse_ = spreadsheetsql_QueryResponse_;
 
     async function spreadsheetsql_getDataFinish_(head_response, response) {
-        spreadsheetsql_getDataTable('E', 400, 20, 0, 80, false, "");
-        spreadsheetsql_getDataTable('F', 400, 20, 0, 80, false, "");
+        spreadsheetsql_getDataTable('E', 400, 20, 10, 70, false, "");
+        spreadsheetsql_getDataTable('F', 400, 20, 10, 70, false, "");
 
     };
     window.spreadsheetsql_getDataFinish_ = spreadsheetsql_getDataFinish_;
 
 
-    span_create('A', 0, 10, 40, '時間', 999);
-    span_create('B', 245, 10, 40, '狀態', 999);
-
     body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
-
+    span_create('A', 10, 20, 40, '時間', 999);
+    span_create('B', 250, 20, 40, '狀態', 999);
     my_01 = 0;
     button_create('A', 60, 30, 500, 100, 1, null, '時間', 12, 999, true);
     async function gamebutton_A_onclick(event) {
         my_01 = 0;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
-        span_delete('A');
-        span_delete('B');
         span_delete('C');
-        span_create('A', 0, 10, 40, '時間', 999);
-        span_create('B', 245, 10, 40, '狀態', 999);
+        span_create('A', 10, 20, 40, '時間', 999);
+        span_create('B', 250, 20, 40, '狀態', 999);
     };
     document.getElementById("gamebutton_A").addEventListener("click", gamebutton_A_onclick, true);
 
@@ -75,7 +71,7 @@ const main = async () => {
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
         span_delete('A');
         span_delete('B');
-        span_create('C', 0, 10, 40, '資訊面板', 999);
+        span_create('C', 10, 20, 40, '點數資訊', 999);
     };
     document.getElementById("gamebutton_B").addEventListener("click", gamebutton_B_onclick, true);
 };
