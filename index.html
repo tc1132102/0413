@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><head><meta charset='utf-8'><meta http-equiv='Access-Control-Allow-Origin' content='*'><meta http-equiv='Access-Control-Allow-Credentials' content='true'><script src='https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js'></script><script src='https://fustyles.github.io/webduino/SpBlocklyJS/GameElements_20190131/marked.min.js'></script><script src='https://fustyles.github.io/webduino/SpBlocklyJS/GameElements_20190131/gameelements.js'></script><link rel='stylesheet' href='https://fustyles.github.io/webduino/SpBlocklyJS/css/icon_custom.css' /><script src='https://fustyles.github.io/webduino/SpBlocklyJS/SpreadsheetSQL_20210403/spreadsheetsql.js'></script><script src='https://fustyles.github.io/webduino/SpBlocklyJS/SpreadsheetSQL_20210403/loader.js'></script></head><body>
+<script>
+const delay = (seconds) => {
+    return new Promise((resolve) => {
+        setTimeout(resolve, seconds * 1000);
+    });
+};
+const main = async () => {
+    var my_01;
+
+    function mathRandomInt(a, b) {
+        if (a > b) {
+            // Swap a and b to ensure a is smaller.
+            var c = a;
+            a = b;
+            b = c;
+        }
+        return Math.floor(Math.random() * (b - a + 1) + a);
+    }
+
+    function colourRgb(r, g, b) {
+        r = Math.max(Math.min(Number(r), 100), 0) * 2.55;
+        g = Math.max(Math.min(Number(g), 100), 0) * 2.55;
+        b = Math.max(Math.min(Number(b), 100), 0) * 2.55;
+        r = ('0' + (Math.round(r) || 0).toString(16)).slice(-2);
+        g = ('0' + (Math.round(g) || 0).toString(16)).slice(-2);
+        b = ('0' + (Math.round(b) || 0).toString(16)).slice(-2);
+        return '#' + r + g + b;
+    }
+
+    function spreadsheetsql_QueryResponse_(res) {
+        spreadsheetsql_QueryResponse(res, "");
+    }
+    window.spreadsheetsql_QueryResponse_ = spreadsheetsql_QueryResponse_;
+
+    async function spreadsheetsql_getDataFinish_(head_response, response) {
+        spreadsheetsql_getDataTable('E', 400, 20, 0, 80, false, "");
+        spreadsheetsql_getDataTable('F', 400, 20, 0, 80, false, "");
+
+    };
+    window.spreadsheetsql_getDataFinish_ = spreadsheetsql_getDataFinish_;
+
+
+    span_create('A', 0, 10, 40, '時間', 999);
+    span_create('B', 245, 10, 40, '狀態', 999);
+
+    body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
+
+    my_01 = 0;
+    button_create('A', 60, 30, 500, 100, 1, null, '時間', 12, 999, true);
+    async function gamebutton_A_onclick(event) {
+        my_01 = 0;
+        body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
+        span_delete('A');
+        span_delete('B');
+        span_delete('C');
+        span_create('A', 0, 10, 40, '時間', 999);
+        span_create('B', 245, 10, 40, '狀態', 999);
+    };
+    document.getElementById("gamebutton_A").addEventListener("click", gamebutton_A_onclick, true);
+
+    setInterval(async function() {
+        if (my_01 == 0) {
+            spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '1215', "");
+            spreadsheetsql_executeSql('select B,H limit 19 offset 0', "");
+        } else {
+            spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '1215', "");
+            spreadsheetsql_executeSql('select E,F limit 5 offset 2', "");
+        }
+    }, 100);
+
+    button_create('B', 60, 30, 560, 100, 1, null, '點數資訊', 12, 999, true);
+    async function gamebutton_B_onclick(event) {
+        my_01 = 1;
+        body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
+        span_delete('A');
+        span_delete('B');
+        span_create('C', 0, 10, 40, '資訊面板', 999);
+    };
+    document.getElementById("gamebutton_B").addEventListener("click", gamebutton_B_onclick, true);
+};
+main();
+</script>
+</body></html>
