@@ -45,7 +45,7 @@ const main = async () => {
     span_create('A', 10, 20, 40, '時間', 999);
     span_create('B', 250, 20, 40, '狀態', 999);
     my_01 = 0;
-    button_create('A', 100, 40, 500, 100, 1, null, '時間', 30, 999, true);
+    button_create('A', 120, 40, 480, 100, 1, null, '時間', 30, 999, true);
     async function gamebutton_A_onclick(event) {
         my_01 = 0;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
@@ -65,7 +65,7 @@ const main = async () => {
         }
     }, 100);
 
-    button_create('B', 150, 40, 600, 100, 1, null, '點數資訊', 30, 999, true);
+    button_create('B', 170, 40, 600, 100, 1, null, '點數資訊', 30, 999, true);
     async function gamebutton_B_onclick(event) {
         my_01 = 1;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
