@@ -45,7 +45,7 @@ const main = async () => {
     span_create('A', 10, 20, 40, '時間', 999);
     span_create('B', 250, 20, 40, '狀態', 999);
     my_01 = 0;
-    button_create('A', 60, 30, 500, 100, 1, null, '時間', 12, 999, true);
+    button_create('A', 60, 30, 500, 100, 1, null, '時間', 20, 999, true);
     async function gamebutton_A_onclick(event) {
         my_01 = 0;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
@@ -58,14 +58,14 @@ const main = async () => {
     setInterval(async function() {
         if (my_01 == 0) {
             spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '1215', "");
-            spreadsheetsql_executeSql('select B,H limit 19 offset 0', "");
+            spreadsheetsql_executeSql('select B,H limit 40 offset 0', "");
         } else {
             spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '1215', "");
-            spreadsheetsql_executeSql('select E,F limit 5 offset 2', "");
+            spreadsheetsql_executeSql('select E,F limit 7 offset 2', "");
         }
     }, 100);
 
-    button_create('B', 70, 30, 560, 100, 1, null, '點數資訊', 12, 999, true);
+    button_create('B', 100, 30, 560, 100, 1, null, '點數資訊', 20, 999, true);
     async function gamebutton_B_onclick(event) {
         my_01 = 1;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
