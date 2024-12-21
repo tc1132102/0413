@@ -45,7 +45,7 @@ const main = async () => {
     span_create('A', 10, 20, 40, '時間', 999);
     span_create('B', 250, 20, 40, '狀態', 999);
     my_01 = 0;
-    button_create('A', 80, 30, 500, 100, 1, null, '時間', 20, 999, true);
+    button_create('A', 80, 30, 500, 130, 1, null, '時間', 20, 999, true);
     async function gamebutton_A_onclick(event) {
         my_01 = 0;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
@@ -65,7 +65,7 @@ const main = async () => {
         }
     }, 100);
 
-    button_create('B', 120, 30, 500, 140, 1, null, '點數資訊', 20, 999, true);
+    button_create('B', 120, 30, 500, 170, 1, null, '點數資訊', 20, 999, true);
     async function gamebutton_B_onclick(event) {
         my_01 = 1;
         body_set("backgroundColor", (colourRgb(mathRandomInt(93, 100), mathRandomInt(93, 100), mathRandomInt(93, 100))));
@@ -75,8 +75,8 @@ const main = async () => {
     };
     document.getElementById("gamebutton_B").addEventListener("click", gamebutton_B_onclick, true);
 
-    image_create('a', 'http://s05.calm9.com/qrcode/2024-12/U5NDQYKL9J.png', 100, 100, 500, 200, 999, true);
-    image_create('b', 'http://media.discordapp.net/attachments/1271411810188398673/1319856151319543838/4.png?ex=67677b54&is=676629d4&hm=203c39af6e9f1408ebddbabc4b8128eb09ff3ebbfe8e167065d59cbcd771dcad&=&format=webp&quality=lossless&width=1440&height=532', 260, 90, 440, 10, 999, true);
+    image_create('a', 'http://s05.calm9.com/qrcode/2024-12/U5NDQYKL9J.png', 100, 100, 500, 210, 999, true);
+    image_create('b', 'http://media.discordapp.net/attachments/1271411810188398673/1319856151319543838/4.png?ex=67677b54&is=676629d4&hm=203c39af6e9f1408ebddbabc4b8128eb09ff3ebbfe8e167065d59cbcd771dcad&=&format=webp&quality=lossless&width=1440&height=532', 320, 130, 440, 10, 999, true);
 };
 main();
 </script>
