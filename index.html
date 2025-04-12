@@ -34,8 +34,8 @@ const main = async () => {
     window.spreadsheetsql_QueryResponse_ = spreadsheetsql_QueryResponse_;
 
     async function spreadsheetsql_getDataFinish_(head_response, response) {
-        spreadsheetsql_getDataTable('E', 400, 20, 10, 70, false, "");
         spreadsheetsql_getDataTable('F', 400, 20, 10, 70, false, "");
+        spreadsheetsql_getDataTable('G', 400, 20, 10, 70, false, "");
 
     };
     window.spreadsheetsql_getDataFinish_ = spreadsheetsql_getDataFinish_;
@@ -57,11 +57,11 @@ const main = async () => {
 
     setInterval(async function() {
         if (my_01 == 0) {
-            spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '413', "");
+            spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '412', "");
             spreadsheetsql_executeSql('select B,H limit 40 offset 0', "");
         } else {
-            spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '413', "");
-            spreadsheetsql_executeSql('select E,F limit 7 offset 2', "");
+            spreadsheetsql_settings('1_C4lB4N8rTbHWdxITejT2jNXD1H5Wt1WPQtLBSqjRE0', '412', "");
+            spreadsheetsql_executeSql('select F,G limit 7 offset 2', "");
         }
     }, 100);
 
